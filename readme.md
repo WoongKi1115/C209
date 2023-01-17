@@ -1,10 +1,47 @@
 # 🐳 우리팀 화이팅!  :penguin:
 
 ## 소개
-웹 큐레이션 sns 기반 아이스 브레이킹  
+웹 큐레이션 sns 기반 아이스 브레이킹
+#
+![나웅기](./img/kiii)
+## 나웅기
+- Project manager
+- socket.io
 
-## 기술스택 및 라이브러리
+#
+![김송섭](./img/song)
+## 김송섭
+- UI/UX
+- socket.io
 
+#
+![윤호운](./img/hoo)
+## 윤호운
+- Front-End
+- Vue3
+- 
+
+#
+![정무남](./img/moo)
+## 정무남
+- Front-End
+- Vue3
+
+#
+![고대석](./img/goo)
+## 고대석
+- Back-End
+- Spring Boot
+- DB
+
+#
+![김수빈](./img/suu)
+## 김수빈
+- Back-End
+- Spring Boot
+- Social Login
+#
+# Requirement
 | Project | Version | Description |
 | ------- | ------- | ----------- |
 | Java    | 1.8     |             |
