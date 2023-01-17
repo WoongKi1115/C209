@@ -11,3 +11,10 @@
 | Gradle  | 3.6.3   | Build Tool  |
 | mySql   |         |             |
 |   Vue2  |         |             |
+
+
+## 개발 환경 구성
+
+Windows 기준 개발 환경 구성 설명
+
+## 디렉토리 구조
