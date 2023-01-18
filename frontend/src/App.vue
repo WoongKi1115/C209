@@ -1,14 +1,19 @@
 <template>
   <div id="App">
-    <router-view></router-view>
+    <HeaderView />
+    <router-view> </router-view>
   </div>
 </template>
 
 <script>
+
 import "./components/css/style.scss";
+import HeaderView from "./components/common/HeaderView.vue";
 export default {
-  name: 'App'
-}
+  name: "App",
+  components: {
+    HeaderView,
+  },
+};
 </script>
 
-<!-- <style lang="scss"></style> -->

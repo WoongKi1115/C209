@@ -43,8 +43,8 @@
           <input
             type="password"
             class="input-signup-password"
-            id="user_password"
-            name="user_password"
+            id="user_password_confirm"
+            name="user_password_confirm"
           />
         </label>
       </div>
