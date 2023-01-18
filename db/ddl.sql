@@ -118,9 +118,9 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `ssafy`.`liargame`
+-- Table `ssafy`.`fileinfo`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ssafy`.`liargame` ;
+DROP TABLE IF EXISTS `ssafy`.`fileinfo` ;
 
 CREATE TABLE `fileinfo` (
   `fildid` INTEGER NOT NULL AUTO_INCREMENT,
