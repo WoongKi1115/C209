@@ -1,0 +1,151 @@
+.wrapA { //전체 틀
+        max-width: 580px;
+        width: 100%;
+        max-height: 1000px;
+        height: 800px;
+        // background-color: blue;
+        background-image: linear-gradient(rgb(89,208,255), rgb(255,255,255));
+        // color: red;
+        h1 {
+            color: #373B95
+            ;
+            text-align: center;
+            padding-top: 20%;
+        }
+    }
+
+.wrap-inputs-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 15%;    
+}
+
+.wrap-inputs-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 20%;    
+}
+// 정렬
+.router-link {
+    text-align: center;
+}
+.flex-container {
+    display: flex;
+}
+
+// 버튼 관련
+
+
+.wrap-btn {
+    text-align: center;
+    .btn-ice {
+        position: relative;
+        border: none;
+        display: inline-block;
+        padding: 15px 30px;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.25s;
+        margin: 0 30px 0 30px;
+      }
+    .btn-login {
+        position: relative;
+        border: none;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.25s;
+        margin: 0 30px 0 30px;
+    }
+    .btn-in {
+        position: relative;
+        border: none;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.25s;
+        margin: 0 30px 0 30px;
+    }
+      
+}
+
+// padding, margin
+.mt10 {
+    padding-top: 10px;
+}
+.mt20 {
+    padding-top: 20px;
+}
+.mt50 {
+    padding-top: 50px;
+}
+.mt100 {
+    padding-top: 100px;
+}
+
+.pt10 {
+    padding-top: 10px;
+}
+.pt20 {
+    padding-top: 20px;
+}
+.pt50 {
+    padding-top: 50px;
+}
+.pt100 {
+    padding-top: 100px;
+}
+
+// input 관련
+.input-with-label{
+    text-align: center;
+    // padding-top: 100px;
+    .input-pin{
+        height: 50px;
+    }
+    .input-id{
+        box-sizing: border-box;
+        height: 30px;
+        width: 70%;
+    }
+    .input-login-password{
+        box-sizing: border-box;
+        height: 30px;
+        width: 70%;
+    }
+    .input-signup-password{
+        box-sizing: border-box;
+        height: 30px;
+        width: 55%;
+    }
+    .input-email {
+        box-sizing: border-box;
+        height: 30px;
+        width: 55%;
+    }
+    .input-nickname {
+        box-sizing: border-box;
+        height: 30px;
+        width: 55%;
+    }
+    // .password{
+    //     ;
+
+    // }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
