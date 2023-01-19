@@ -1,9 +1,9 @@
 <template>
   <header>
-      <button @click="goBack">뒤버튼</button>
-      <img src="../../assets/penguin.png" @click="goHome">
+      <img src="../../assets/back_btn.png" @click="goBack" class="back-btn ">
+      <img src="../../assets/penguin.png" @click="goHome" class="logo">
       <div>사용자님?</div>
-  </header>
+  </header> 
 </template>
 
 <script>

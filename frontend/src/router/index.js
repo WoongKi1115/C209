@@ -4,6 +4,8 @@ import LoginView from '../views/user/LoginView.vue'
 import SignupView from '../views/user/SignupView.vue'
 import IceMainView from '../views/icebreaking/IceMainView.vue'
 import GameMainView from '../views/game/GameMainView.vue'
+import MakeRoomIceView from '../views/icebreaking/MakeRoomIceView.vue'
+import IceQrView from '../views/icebreaking/IceQrView.vue'
 
 const routes = [
   {
@@ -30,6 +32,16 @@ const routes = [
     path: '/gamemain',
     name: 'GameMain',
     component: GameMainView
+  },
+  {
+    path: '/makeroomice',
+    name: 'MakeRoomIce',
+    component: MakeRoomIceView
+  },
+  {
+    path: '/iceqr',
+    name: 'IceQr',
+    component: IceQrView
   },
 ]
 
