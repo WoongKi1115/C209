@@ -2,7 +2,7 @@
         max-width: 580px;
         width: 100%;
         max-height: 1000px;
-        height: calc(100vh - 100px);
+        height: calc(100vh - 50px);
         // background-image: linear-gradient(rgb(89,208,255), rgb(255,255,255));
         background-image: url('../../assets/back_blue.png');
         background-size: 100%;
@@ -49,9 +49,9 @@ header {
     height: 50px;
     width: 100%;
     justify-content: space-between;
-    background-color: #2da6ec;
+    background-color: #ece22d;
     .logo {
-        width: 30px;
+        width: 50px;
         height: 40px;
         object-fit: cover;
     }
@@ -109,8 +109,9 @@ header {
         transition: 0.25s;
         margin: 0 30px 0 30px;
     }
-    .img-ice {
-        height: 110px;
+    .img-ani3 {
+        height: 170px;
+        width: 70%;
     }
     .img-game {
         height: 100px;
