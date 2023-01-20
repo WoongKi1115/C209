@@ -1,41 +1,87 @@
-.wrapA { //전체 틀
-        max-width: 580px;
-        width: 100%;
-        max-height: 1000px;
-        height: calc(100vh - 50px);
-        // background-image: linear-gradient(rgb(89,208,255), rgb(255,255,255));
-        background-image: url('../../assets/back_blue.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        // vertical-align : bottom;
-        h1 {
-            color: #373B95
-            ;
-            text-align: center;
-            padding-top: 20%;
-            margin-top: 0px;
-        }
-        img {
-            display: block;
-            margin: 0px auto;
-            padding-top: 40px;
-            width: 60%;
-            height: 60px;
-        }
+.wrapA {
+    //전체 틀
+    max-width: 580px;
+    width: 100%;
+    max-height: 1000px;
+    height: calc(100vh - 20px);
+    // height: 100vmax;
+    // background-image: linear-gradient(rgb(89,208,255), rgb(255,255,255));
+    background-image: url('../../assets/back_blue1.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    // vertical-align : bottom;
+    h1 {
+        color: #373B95;
+        text-align: center;
+        padding-top: 20%;
+        margin-top: 0px;
     }
+
+    img {
+        display: block;
+        margin: 0px auto;
+        padding-top: 40px;
+        width: 60%;
+        height: 60px;
+    }
+}
+
+.wrapB {
+    //전체 틀
+    max-width: 580px;
+    width: 100%;
+    max-height: 1000px;
+    height: calc(100vh - 20px);
+    // height: 100vmax;
+    // background-image: linear-gradient(rgb(89,208,255), rgb(255,255,255));
+    background-image: url('../../assets/back_pink.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    h1 {
+        color: #373B95;
+        text-align: center;
+        padding-top: 20%;
+        margin-top: 0px;
+    }
+
+    img {
+        display: block;
+        margin: 0px auto;
+        padding-top: 40px;
+        width: 60%;
+        height: 60px;
+    }
+}
+
+.wrap-input-pin {
+    display: flex;
+    padding: 20% 20% 0px 20%;
+
+    input {
+        height: 40px;
+    }
+
+    img {
+        width: 60px;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+    }
+}
 
 .wrap-inputs-login {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 15%;    
+    height: 15%;
 }
 
 .wrap-inputs-signup {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 20%;    
+    height: 20%;
 }
 
 .wrap-count-num {
@@ -50,19 +96,26 @@ header {
     width: 100%;
     justify-content: space-between;
     background-color: #ece22d;
+
     .logo {
         width: 50px;
         height: 40px;
         object-fit: cover;
     }
-    .back-btn{
+
+    .back-btn {
         width: 20%
     }
 }
+
 // 정렬
 .router-link {
     text-align: center;
+    img {
+        width: 50%;
+    }
 }
+
 .flex-container {
     display: flex;
 }
@@ -72,7 +125,8 @@ header {
 
 .wrap-btn {
     text-align: center;
-    white-space:nowrap;
+    white-space: nowrap;
+
     .btn-ice {
         position: relative;
         border: none;
@@ -84,7 +138,8 @@ header {
         font-weight: 600;
         transition: 0.25s;
         margin: 0 30px 0 30px;
-      }
+    }
+
     .btn-login {
         position: relative;
         border: none;
@@ -97,6 +152,7 @@ header {
         transition: 0.25s;
         margin: 0 30px 0 30px;
     }
+
     .btn-in {
         position: relative;
         border: none;
@@ -109,27 +165,32 @@ header {
         transition: 0.25s;
         margin: 0 30px 0 30px;
     }
+
     .img-ani3 {
         height: 170px;
         width: 70%;
     }
+
     .img-game {
         height: 100px;
         padding-top: 0;
     }
-      
+
 }
 
 // padding, margin
 .mt10 {
     margin-top: 10px;
 }
+
 .mt20 {
     margin-top: 20px;
 }
+
 .mt50 {
     margin-top: 50px;
 }
+
 .mt100 {
     margin-top: 100px;
 }
@@ -137,9 +198,15 @@ header {
 .mtp5 {
     margin-top: 5%;
 }
+
 .mtp10 {
     margin-top: 10%;
 }
+
+.mtp15 {
+    margin-top: 15%;
+}
+
 .mtp20 {
     margin-top: 20%;
 }
@@ -147,12 +214,15 @@ header {
 .pt10 {
     padding-top: 10px;
 }
+
 .pt20 {
     padding-top: 20px;
 }
+
 .pt50 {
     padding-top: 50px;
 }
+
 .pt100 {
     padding-top: 100px;
 }
@@ -160,43 +230,59 @@ header {
 .ptp10 {
     padding-top: 10%;
 }
+
 .ptp15 {
     padding-top: 15%;
 }
 
 // input 관련
 
-.input-with-label{
+.input-with-label {
     text-align: center;
+
     // padding-top: 100px;
-    .input-pin{
-        height: 50px;
+    .input-pin {
+        height: 40px;
+        border-radius: 15px;
+        outline: none;
+        display: flex;
     }
-    .input-id{
+
+    img {
+        width: 60px;
+        height: 40px;
+    }
+
+    .input-id {
         box-sizing: border-box;
         height: 30px;
         width: 70%;
     }
-    .input-login-password{
+
+    .input-login-password {
         box-sizing: border-box;
         height: 30px;
         width: 70%;
     }
-    .input-signup-password{
+
+    .input-signup-password {
         box-sizing: border-box;
         height: 30px;
         width: 55%;
     }
+
     .input-email {
         box-sizing: border-box;
         height: 30px;
         width: 55%;
     }
+
     .input-nickname {
         box-sizing: border-box;
         height: 30px;
         width: 55%;
     }
+
     // .password{
     //     ;
 
@@ -205,6 +291,6 @@ header {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }

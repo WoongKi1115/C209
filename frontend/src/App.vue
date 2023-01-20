@@ -8,6 +8,7 @@
 <script>
 
 import "./components/css/style.scss";
+
 // import HeaderView from "./components/common/HeaderView.vue";
 export default {
   name: "App",

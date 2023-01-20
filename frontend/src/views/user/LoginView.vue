@@ -24,14 +24,23 @@
     <div class="wrap-btn mt50">
       <button class="btn-in">IN</button>
     </div>
-    <div class="router-link mt50">
+    <div class="router-link mtp20">
       <router-link to="/signup"> 아이디가 없으신가요? </router-link>
+      <img src="../../assets/signup_btn.png"  @click="goSignUp"/>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import router from "@/router";
+
+export default {
+  methods: {
+    goSignUp() {
+      router.push({ name: "Signup" });
+    },
+  }
+};
 </script>
 
 <style>

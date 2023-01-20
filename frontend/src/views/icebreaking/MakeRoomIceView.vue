@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapA">
+  <div class="wrapB">
     <h1>ICE. 1</h1>
     <div class="wrap-count-num">
       <button @click="minusNum">-</button>

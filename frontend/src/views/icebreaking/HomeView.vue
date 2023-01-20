@@ -1,16 +1,15 @@
 <template>
   <div class="wrapA">
-    <img src="../../assets/title.png">
+    <img src="../../assets/title.png" />
     <div class="wrap-btn">
-      <img src="../../assets/ani3.png" class="img-ani3">
+      <img src="../../assets/ani3.png" class="img-ani3" />
     </div>
-    <div class="input-with-label ptp10">
-      <label for="pin_num" class="input-pin"
-        >PIN:
-        <input type="number" id="pin_num" name="pin" />
-        <button>입장하기</button>
-      </label>
+    <div class="wrap-input-pin">
+      PIN:
+      <input type="number" id="pin_num" />
+      <img src="../../assets/enter_btn.png" />
     </div>
+    <img src="../../assets/makeroom_btn.png" @click="goLogin" />
   </div>
 </template>
 
