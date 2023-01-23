@@ -1,14 +1,13 @@
 package com.ssafy.youandi.entity.user;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.ssafy.youandi.entity.Role;
+import lombok.*;
 
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDateTime;
 
@@ -19,6 +18,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Builder
+@Getter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,5 +33,10 @@ public class User {
     private LocalDateTime createDate;
 
     private String token;
+    @Enumerated(EnumType.STRING)
+    private Role role = Role.MEMBER;
 
+    public void encodePassword(PasswordEncoder passwordEncoder) {
+        this.password=passwordEncoder.encode(password);
+    }
 }
