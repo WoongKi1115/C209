@@ -8,8 +8,8 @@ public class Oxquiz {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "oxid")
-    private int oxId;
+    @Column(name = "ox_id")
+    private long oxId;
 
     private String quiz;
 

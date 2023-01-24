@@ -8,13 +8,13 @@ public class Balancegame {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bgid")
-    private int bgId;
+    @Column(name = "balancegame_id")
+    private long bgId;
 
-    @Column(name = "bgquestion1")
+    @Column(name = "bg_question1")
     private String bgQuestion1;
 
-    @Column(name = "bgquestion2")
+    @Column(name = "bg_question2")
     private String bgQuestion2;
 
 }
