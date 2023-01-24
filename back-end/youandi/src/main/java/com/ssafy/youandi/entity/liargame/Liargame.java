@@ -8,12 +8,12 @@ public class Liargame {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "lgid")
-    private int lgId;
+    @Column(name = "lg_id")
+    private long lgId;
 
-    @Column(name = "lgtype")
+    @Column(name = "lg_type")
     private String lgType;
 
-    @Column(name = "lgword")
+    @Column(name = "lg_word")
     private String lgWord;
 }

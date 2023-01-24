@@ -17,17 +17,17 @@ public class SignupRequest {
     @ApiModelProperty(required = true)
     @NotNull
     @NotBlank(message = "이메일을 입력해주세요")
-    String email;
+    private String email;
     @ApiModelProperty(required = true)
     @NotNull
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d$@$!%*#?&]{8,}$")
     @NotBlank(message = "비밀번호를 입력해주세요")
-    String password;
-    String checkedpassword;
+    private String password;
+    private String checkedpassword;
     @ApiModelProperty(required = true)
     @NotNull
     @NotBlank(message = "닉네임을 입력해주세요")
-    String nickname;
+    private String nickname;
 
 
     public String getEmail() {
