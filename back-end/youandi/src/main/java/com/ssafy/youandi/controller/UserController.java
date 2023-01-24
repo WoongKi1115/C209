@@ -26,7 +26,7 @@ public class UserController {
     //회원가입
     @PostMapping("/join")
     @ResponseStatus(HttpStatus.OK)
-    public int join(@Valid @RequestBody SignupRequest signupRequest) throws Exception{
+    public Long join(@Valid @RequestBody SignupRequest signupRequest) throws Exception{
         return userService.singUp(signupRequest);
     }
 
