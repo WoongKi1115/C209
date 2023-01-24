@@ -10,11 +10,11 @@ public class Fileinfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "fileid")
-    private int fileId;
+    @Column(name = "file_id")
+    private long fileId;
 
     @ManyToOne
-    @JoinColumn(name="uid")
+    @JoinColumn(name="user_id")
     private User user;
 
     @Column(name = "save_folder")

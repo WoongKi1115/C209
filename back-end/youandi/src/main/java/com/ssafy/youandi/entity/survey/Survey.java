@@ -8,8 +8,8 @@ public class Survey {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "surveyid")
-    private int surveyId;
+    @Column(name = "survey_id")
+    private long surveyId;
 
     private String survey;
 }

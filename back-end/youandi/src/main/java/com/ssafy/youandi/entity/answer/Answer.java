@@ -11,17 +11,17 @@ public class Answer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "answerid")
-    private int answerId;
+    @Column(name = "answer_id")
+    private long answerId;
 
     private String answer;
 
     @ManyToOne
-    @JoinColumn(name="uid")
+    @JoinColumn(name="user_id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name="surveyid")
+    @JoinColumn(name="survey_id")
     private Survey survey;
 
     public Answer() {

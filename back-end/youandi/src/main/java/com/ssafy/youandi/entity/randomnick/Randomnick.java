@@ -8,8 +8,9 @@ public class Randomnick {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "nickid")
-    private int nickId;
+    @Column(name = "nick_id")
+    private long nickId;
 
-    private String name;
+    @Column(name = "random_nickname")
+    private String randomNickname;
 }
