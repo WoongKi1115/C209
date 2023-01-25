@@ -1,10 +1,10 @@
 package com.ssafy.youandi.service;
 
-import com.ssafy.youandi.entity.user.SignupRequest;
+import com.ssafy.youandi.dto.SignupRequest;
 
 
 public interface UserService {
     //회원가입
-    public int singUp(SignupRequest signupRequest) throws Exception;
+    public Long singUp(SignupRequest signupRequest) throws Exception;
 
 }

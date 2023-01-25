@@ -1,6 +1,6 @@
 package com.ssafy.youandi.service.Impl;
 
-import com.ssafy.youandi.entity.user.SignupRequest;
+import com.ssafy.youandi.dto.SignupRequest;
 import com.ssafy.youandi.entity.user.User;
 import com.ssafy.youandi.repository.UserRepository;
 import com.ssafy.youandi.service.UserService;
@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
     @Transactional
     @Override
-    public int singUp(SignupRequest signupRequest) throws Exception {
+    public Long singUp(SignupRequest signupRequest) throws Exception {
         if(userRepository.findByEmail(signupRequest.getEmail()).isPresent()){
             throw new Exception("이미 존재하는 이메일입니다.");
         }
@@ -29,6 +29,6 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.save(signupRequest.toEntity());
         user.encodePassword(passwordEncoder);
 
-        return user.getUId();
+        return user.getUserId();
     }
 }
