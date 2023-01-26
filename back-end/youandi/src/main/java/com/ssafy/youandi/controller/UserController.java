@@ -34,13 +34,13 @@ public class UserController {
     }
 
     //로그인
-    @PostMapping
-    public String login(@RequestBody Map<String,String> user) throws Exception{
-        logger.info("user email ={}",user.get("email"));
-        User member = userRepository.findByEmail(user.get("email"))
-                .orElseThrow(()->new IllegalArgumentException("가입되지 않은 e-mail 입니다."));
-        return jwtTokenProvider.createAccessToken();
-    }
+//    @PostMapping
+//    public String login(@RequestBody Map<String,String> user) throws Exception{
+//        logger.info("user email ={}",user.get("email"));
+//        User member = userRepository.findByEmail(user.get("email"))
+//                .orElseThrow(()->new IllegalArgumentException("가입되지 않은 e-mail 입니다."));
+//        return jwtTokenProvider.createAccessToken();
+//    }
 
 
 
