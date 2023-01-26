@@ -1,4 +1,4 @@
-package com.ssafy.youandi.config;
+package com.ssafy.youandi.config.jwt;
 
 import com.ssafy.youandi.entity.Role;
 import lombok.Builder;
@@ -10,13 +10,13 @@ import java.util.Collection;
 
 public class JwtUserDetails implements UserDetails {
 
-    private int id;
+    private long id;
     private String nickname;
     private String password;
     private Role role;
 
     @Builder
-    public JwtUserDetails(int id, String nickname, String password, Role role) {
+    public JwtUserDetails(long id, String nickname, String password, Role role) {
         this.id = id;
         this.nickname = nickname;
         this.password = password;
