@@ -2,10 +2,9 @@ package com.ssafy.youandi.dto;
 
 import lombok.*;
 
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 @Builder
+@Data
+@AllArgsConstructor
 public class TokenDto {
     private String grantType;
     private String accessToken;

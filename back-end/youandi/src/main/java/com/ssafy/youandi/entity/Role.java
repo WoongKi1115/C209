@@ -1,5 +1,5 @@
 package com.ssafy.youandi.entity;
 
 public enum Role {
-    MEMBER,ADMIN
+    ROLE_USER, ROLE_ADMIN
 }

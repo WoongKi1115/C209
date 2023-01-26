@@ -28,7 +28,6 @@ public class JoinDto {
     @NotBlank(message = "닉네임을 입력해주세요")
     private String nickname;
 
-
     public String getEmail() {
         return email;
     }
@@ -61,12 +60,4 @@ public class JoinDto {
         this.nickname = nickname;
     }
 
-    public User toEntity(){
-        return User.builder()
-                .email(email)
-                .password(password)
-                .nickname(nickname)
-                .role(Role.MEMBER)
-                .build();
-    }
 }
