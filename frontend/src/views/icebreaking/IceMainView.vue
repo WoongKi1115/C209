@@ -14,7 +14,7 @@ export default {
   methods: {
     goMakeRoomIce() {
       router.push({ name: "MakeRoomIce" });
-    }, // 로그인 여부에 따라 보내야함 
+    },
   }
 };
 </script>

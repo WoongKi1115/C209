@@ -1,15 +1,15 @@
 <template>
   <div class="wrapA">
-    <img src="../../assets/title.png" />
-    <div class="wrap-btn">
-      <img src="../../assets/ani3.png" class="img-ani3" />
-    </div>
+    <h1>너나들이</h1>
+    <img src="../../assets/ani3.png" class="img-ani3" />
     <div class="wrap-input-pin">
       PIN:
       <input type="number" id="pin_num" />
-      <img src="../../assets/enter_btn.png" />
+      <img src="../../assets/enter_btn.png"/>
     </div>
-    <img src="../../assets/makeroom_btn.png" @click="goLogin" />
+    <!-- <div>
+      <img src="../../assets/makeroom_btn.png" @click="goLogin" />
+    </div> -->
   </div>
 </template>
 
@@ -29,6 +29,8 @@ export default {
     },
   },
 };
+
+
 </script>
 
 <style>
