@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder
-public class LoginDto {
+public class LoginRequestDto {
 
     @NotNull
     @Size(min = 3, max = 50)

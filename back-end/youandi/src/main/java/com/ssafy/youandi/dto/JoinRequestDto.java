@@ -12,7 +12,7 @@ import javax.validation.constraints.Pattern;
 
 @Valid
 @ToString
-public class JoinDto {
+public class JoinRequestDto {
     @ApiModelProperty(required = true)
     @NotNull
     @NotBlank(message = "이메일을 입력해주세요")
@@ -27,6 +27,7 @@ public class JoinDto {
     @NotNull
     @NotBlank(message = "닉네임을 입력해주세요")
     private String nickname;
+
 
     public String getEmail() {
         return email;

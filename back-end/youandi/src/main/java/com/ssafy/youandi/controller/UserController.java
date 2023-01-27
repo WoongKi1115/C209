@@ -1,8 +1,8 @@
 package com.ssafy.youandi.controller;
 
 import com.ssafy.youandi.config.jwt.JwtFilter;
-import com.ssafy.youandi.dto.JoinDto;
-import com.ssafy.youandi.dto.LoginDto;
+import com.ssafy.youandi.dto.JoinRequestDto;
+import com.ssafy.youandi.dto.LoginRequestDto;
 import com.ssafy.youandi.dto.TokenDto;
 import com.ssafy.youandi.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -34,8 +34,8 @@ public class UserController {
 
     // 로그인
     @PostMapping("/login")
-    public ResponseEntity<TokenDto> login(@RequestBody LoginDto loginDto) throws Exception {
-        TokenDto tokenDto = userService.login(loginDto);
+    public ResponseEntity<TokenDto> login(@RequestBody LoginRequestDto loginRequestDto) throws Exception {
+        TokenDto tokenDto = userService.login(loginRequestDto);
 
         HttpHeaders headers = new HttpHeaders();
         headers.add(JwtFilter.AUTHORIZATION_HEADER, "Bearer " + tokenDto.getAccessToken());
@@ -46,8 +46,8 @@ public class UserController {
     // 회원가입
     @PostMapping("/join")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Void> join(@Valid @RequestBody JoinDto joinDto) throws Exception{
-        userService.join(joinDto);
+    public ResponseEntity<Void> join(@Valid @RequestBody JoinRequestDto joinRequestDto) throws Exception{
+        userService.join(joinRequestDto);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

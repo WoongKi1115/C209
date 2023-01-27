@@ -1,4 +1,4 @@
-package com.ssafy.youandi.config.userdetail;
+package com.ssafy.youandi.config.jwt;
 
 import com.ssafy.youandi.entity.Role;
 import com.ssafy.youandi.entity.user.User;
