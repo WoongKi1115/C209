@@ -1,0 +1,29 @@
+server:
+  port: 3000
+
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/youandi?serverTimezone=UTC&characterEncoding=UTF-8
+    username: ssafy
+    password: ssafy
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+  jwt:
+    secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHa
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+
+spring.mvc.pathmatch.matching-strategy: ant-path-matcher
