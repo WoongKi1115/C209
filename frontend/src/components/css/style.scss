@@ -26,37 +26,34 @@ body {
         color: #ffffff;
         text-align: center;
         padding-top: 20%;
-        margin-top: 0px;
+        margin: 10px 0;
         font-size: 80px;
         font-family: bitbit;
         text-shadow: 0px 3px 2px #F73C89;
         -webkit-text-stroke: 0.3px black;
     }
 
-    img {
-        display: block;
-        margin: 0px auto;
-        padding-top: 40px;
-        width: 300px;
-        height: 150px;
-    }
+    
 }
 
 
 .wrap-input-pin {
     display: flex;
-    padding: 20% 20%;
+    padding: 15%;
+    justify-content: center;
     font-family: bitbit;
     font-size: 30px;
-
+    span {
+        margin-top: 7px;
+    }
     input {
         height: 40px;
     }
-
+    
     img {
         width: 60px;
         height: 35px;
-        margin: 0;
+        margin-top: 6px;
         padding: 0;
     }
 }
@@ -74,10 +71,25 @@ body {
     justify-content: space-evenly;
     height: 20%;
 }
+.wrap-signup-btn{
+    margin-top: 80px;
+    text-align: center;
+    display: block;
+}
 
 .wrap-count-num {
     display: flex;
     justify-content: space-evenly;
+}
+
+.wrap-mode-btn {
+    margin-top: 40%;
+    display: block;
+    text-align: center;
+    img {
+        width: 250px;
+        height: 160px;
+    }
 }
 
 header {
@@ -87,25 +99,20 @@ header {
     width: 100%;
     justify-content: space-between;
     background-color: #ece22d;
-
+    
     .logo {
         width: 50px;
         height: 40px;
         object-fit: cover;
     }
-
+    
     .back-btn {
         width: 20%
     }
 }
 
 // 정렬
-.router-link {
-    text-align: center;
-    img {
-        width: 50%;
-    }
-}
+
 
 .flex-container {
     display: flex;
@@ -113,61 +120,68 @@ header {
 
 // 버튼 관련
 
-
-.wrap-btn {
-    text-align: center;
-    white-space: nowrap;
-
-    .btn-ice {
-        position: relative;
-        border: none;
-        display: inline-block;
-        padding: 10% 8%;
-        border-radius: 15px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.25s;
-        margin: 0 30px 0 30px;
-    }
-
-    .btn-login {
-        position: relative;
-        border: none;
-        display: inline-block;
-        padding: 10px 30px;
-        border-radius: 15px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.25s;
-        margin: 0 30px 0 30px;
-    }
-
-    .btn-in {
-        position: relative;
-        border: none;
-        display: inline-block;
-        padding: 10px 30px;
-        border-radius: 15px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.25s;
-        margin: 0 30px 0 30px;
-    }
-
-    .img-ani3 {
-        height: 170px;
-        width: 70%;
-    }
-
-    .img-game {
-        height: 100px;
-        padding-top: 0;
-    }
-
+.btn-img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 160px;
+    height: 80px;
 }
+.btn-img-signup {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 150px;
+    height: 65px;
+    
+}
+
+.btn-ice {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 10% 8%;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    margin: 0 30px 0 30px;
+}
+
+.btn-login {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    margin: 0 30px 0 30px;
+}
+
+
+
+.img-ani3 {
+    display: block;
+    margin: 0px auto;
+    padding-top: 40px;
+    width: 300px;
+    height: 150px;
+}
+// .img-ani3 {
+//     height: 170px;
+//     width: 70%;
+// }
+
+.img-game {
+    height: 100px;
+    padding-top: 0;
+}
+
+
 
 // padding, margin
 .mt10 {
@@ -230,6 +244,7 @@ header {
 
 .input-with-label {
     text-align: center;
+    font-family: bitbit;
 
     // padding-top: 100px;
     .input-pin {
@@ -291,4 +306,11 @@ input::-webkit-inner-spin-button {
     font-family:'bitbit';
     src:url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff'),url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2') ;
   }
+
+  @font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 

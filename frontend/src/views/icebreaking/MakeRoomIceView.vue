@@ -1,14 +1,11 @@
 <template>
-  <div class="wrapB">
+  <div class="wrapA">
     <h1>ICE. 1</h1>
     <div class="wrap-count-num">
       <button @click="minusNum">-</button>
       <span v-bind:numOfMember="numOfMember">{{ numOfMember }}</span>
       <button @click="plusNum">+</button>
     </div>
-		<div class="wrap-btn">
-			<button class="btn-login" @click="goIceQr">방만들기</button>
-		</div>
   </div>
 </template>
 

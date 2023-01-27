@@ -20,13 +20,10 @@
         </label>
       </div>
     </div>
-
-    <div class="wrap-btn mt50">
-      <button class="btn-in">IN</button>
-    </div>
-    <div class="router-link mtp20">
+    <img src="../../assets/in_btn.png" class="btn-img">
+    <div class="wrap-signup-btn">
       <router-link to="/signup"> 아이디가 없으신가요? </router-link>
-      <img src="../../assets/signup_btn.png"  @click="goSignUp"/>
+      <img src="../../assets/signup_btn.png"  class="btn-img-signup" @click="goSignUp"/>
     </div>
   </div>
 </template>

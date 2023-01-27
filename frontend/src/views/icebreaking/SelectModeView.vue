@@ -1,8 +1,8 @@
 <template>
   <div class="wrapA">
-    <h1>Ice Breaking</h1>
-    <div class="wrap-btn">
-      <button class="btn-ice" @click="goMakeRoomIce">ICE1</button>
+    <div class="wrap-mode-btn">
+      <img src="../../assets/ice_btn.png" @click="goMakeRoomIce">
+      <img src="../../assets/game_btn.png">
     </div>
   </div>
 </template>
