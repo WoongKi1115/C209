@@ -1,4 +1,4 @@
-package com.ssafy.youandi.entity.liargame;
+package com.ssafy.youandi.entity.game.liargame;
 
 import javax.persistence.*;
 

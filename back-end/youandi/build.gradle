@@ -37,7 +37,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation:2.7.7'
 	// https://mvnrepository.com/artifact/io.swagger/swagger-annotations
 	implementation 'io.swagger:swagger-annotations:1.5.0'
-
+	implementation 'com.google.code.gson:gson:2.8.7'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
@@ -47,6 +47,7 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.7.0'
 
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 	// security
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
 	implementation 'org.springframework.boot:spring-boot-starter-security'

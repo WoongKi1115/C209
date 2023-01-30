@@ -1,4 +1,4 @@
-package com.ssafy.youandi.entity.bomb;
+package com.ssafy.youandi.entity.game.bomb;
 
 import javax.persistence.*;
 

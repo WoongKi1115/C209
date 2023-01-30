@@ -1,4 +1,4 @@
-package com.ssafy.youandi.dto;
+package com.ssafy.youandi.dto.request;
 
 import com.ssafy.youandi.entity.Role;
 import com.ssafy.youandi.entity.user.User;
@@ -16,6 +16,7 @@ public class JoinRequestDto {
     @ApiModelProperty(required = true)
     @NotNull
     @NotBlank(message = "이메일을 입력해주세요")
+    @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}$", message = "이메일 형식에 맞지 않습니다.")
     private String email;
     @ApiModelProperty(required = true)
     @NotNull

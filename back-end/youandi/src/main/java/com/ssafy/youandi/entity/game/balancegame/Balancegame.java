@@ -1,4 +1,4 @@
-package com.ssafy.youandi.entity.balancegame;
+package com.ssafy.youandi.entity.game.balancegame;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
-package com.ssafy.youandi.entity.answer;
+package com.ssafy.youandi.entity.user.answer;
 
-import com.ssafy.youandi.entity.survey.Survey;
+import com.ssafy.youandi.entity.user.survey.Survey;
 import com.ssafy.youandi.entity.user.User;
 
 import javax.persistence.*;

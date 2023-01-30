@@ -1,4 +1,4 @@
-package com.ssafy.youandi.dto;
+package com.ssafy.youandi.dto.request;
 
 import lombok.*;
 
@@ -6,8 +6,8 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder
-public class ReIssueDto {
+public class ReIssueRequestDto {
 
-    private String nickname;
+    private String email;
     private String refreshToken;
 }

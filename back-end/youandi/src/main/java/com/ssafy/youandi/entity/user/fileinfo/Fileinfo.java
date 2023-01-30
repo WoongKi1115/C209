@@ -1,4 +1,4 @@
-package com.ssafy.youandi.entity.fileinfo;
+package com.ssafy.youandi.entity.user.fileinfo;
 
 import com.ssafy.youandi.entity.user.User;
 

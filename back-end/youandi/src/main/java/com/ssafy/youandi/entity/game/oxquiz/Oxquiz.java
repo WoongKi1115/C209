@@ -1,4 +1,4 @@
-package com.ssafy.youandi.entity.oxquiz;
+package com.ssafy.youandi.entity.game.oxquiz;
 
 import javax.persistence.*;
 

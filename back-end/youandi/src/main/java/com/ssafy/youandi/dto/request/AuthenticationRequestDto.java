@@ -1,4 +1,4 @@
-package com.ssafy.youandi.dto;
+package com.ssafy.youandi.dto.request;
 
 
 import lombok.*;

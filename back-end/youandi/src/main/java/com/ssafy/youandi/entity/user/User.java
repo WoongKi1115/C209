@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Builder
 @Getter
+@Setter
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,6 +41,8 @@ public class User implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role role = Role.ROLE_USER;
+    private String provider;
+    private String refreshToken;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -78,4 +81,11 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public void updateRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
+
+
 }

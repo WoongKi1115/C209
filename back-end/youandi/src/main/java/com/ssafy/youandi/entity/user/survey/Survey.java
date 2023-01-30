@@ -1,4 +1,4 @@
-package com.ssafy.youandi.entity.survey;
+package com.ssafy.youandi.entity.user.survey;
 
 import javax.persistence.*;
 

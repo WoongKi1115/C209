@@ -2,6 +2,18 @@ server:
   port: 3000
 
 spring:
+  redis:
+    host: localhost
+    port: 6379
+  social:
+    kakao:
+      client_id: 5274363d795adc972c44414aebc11d7c
+      redirect_uri: http://localhost:3000/social/login/kakao
+      scope: profile_nickname, account_email
+      url:
+        login: https://kauth.kakao.com/oauth/authorize
+        token: https://kauth.kakao.com/oauth/token
+        profile: https://kapi.kakao.com/v2/user/me
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
