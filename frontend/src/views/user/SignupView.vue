@@ -6,12 +6,15 @@
         <label for="user_email"
           >이메일 :
           <input
-            type="text"
+            type="email"
             class="input-email"
             id="user_email"
-            name="user_email"
+            v-model="state.credentials.email"
           />
           <button>중복확인</button>
+          <p v-show="state.valid.email" class="input-error">
+            이메일 주소를 정확히 입력해주세요.
+          </p>
         </label>
       </div>
       <div class="input-with-label">
@@ -21,7 +24,7 @@
             type="text"
             class="input-nickname"
             id="user_nickname"
-            name="user_nickname"
+            v-model="state.credentials.nickname"
           />
           <button>중복확인</button>
         </label>
@@ -33,7 +36,7 @@
             type="password"
             class="input-signup-password"
             id="user_password"
-            name="user_password"
+            v-model="state.credentials.password"
           />
         </label>
       </div>
@@ -44,19 +47,71 @@
             type="password"
             class="input-signup-password"
             id="user_password_confirm"
-            name="user_password_confirm"
+            v-model="state.credentials.passwordConfirm"
           />
         </label>
       </div>
     </div>
     <div class="wrap-btn">
-      <button>JOIN</button>
+      <button @click="signup">JOIN</button>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+import * as EmailValidator from "email-validator";
+import { ref } from "vue";
+
+export default {
+  setup() {
+    const state = ref({
+      credentials: {
+        email: null,
+        nickname: null,
+        password: null,
+        passwordConfirm: null,
+      },
+      valid: {
+        email: false,
+      },
+    });
+
+    const signup = () => {
+      console.log(state.value.credentials);
+       axios({
+        methods: "post",
+        url: "url자리",
+        data: state.value.credentials,
+      })
+      .then(() => {
+        alert("성공")
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    };
+
+    const checkEmail = () => {
+      let isValid = EmailValidator.validate(state.value.credentials.email);
+      state.value.valid.email = !isValid;
+    };
+
+    return {
+      state,
+      signup,
+      checkEmail,
+    };
+  },
+  watch: {
+    "state.credentials.email": {
+      handler(newValue, oldValue) {
+        this.checkEmail();
+      },
+      deep: true,
+    },
+  },
+};
 </script>
 
 <style>
