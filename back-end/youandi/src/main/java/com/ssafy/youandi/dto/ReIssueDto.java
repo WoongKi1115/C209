@@ -8,6 +8,6 @@ import lombok.*;
 @Builder
 public class ReIssueDto {
 
-    private String nickname;
+    private String email;
     private String refreshToken;
 }

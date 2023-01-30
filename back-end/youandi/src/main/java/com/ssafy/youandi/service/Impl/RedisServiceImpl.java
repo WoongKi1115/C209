@@ -1,5 +1,6 @@
 package com.ssafy.youandi.service.Impl;
 
+import com.ssafy.youandi.service.RedisService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import java.time.Duration;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class RedisServiceImpl {
+public class RedisServiceImpl implements RedisService {
 
     private final RedisTemplate redisTemplate;
 

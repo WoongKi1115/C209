@@ -19,7 +19,6 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class JwtUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
