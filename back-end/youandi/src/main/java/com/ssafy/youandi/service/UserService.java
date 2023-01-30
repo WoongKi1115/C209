@@ -1,7 +1,10 @@
 package com.ssafy.youandi.service;
 
-import com.ssafy.youandi.dto.*;
-import com.ssafy.youandi.entity.user.User;
+import com.ssafy.youandi.dto.request.*;
+import com.ssafy.youandi.dto.response.JoinResponseDto;
+import com.ssafy.youandi.dto.response.LoginResponseDto;
+import com.ssafy.youandi.dto.response.TokenResponseDto;
+import org.springframework.http.ResponseEntity;
 
 
 public interface UserService {
@@ -10,7 +13,9 @@ public interface UserService {
 
     // 회원가입
     public JoinResponseDto join(JoinRequestDto joinRequestDto) throws Exception;
-    public TokenResponseDto reIssue(ReIssueDto reIssueDto) throws Exception;
+    public TokenResponseDto reIssue(ReIssueRequestDto reIssueRequestDto) throws Exception;
 
     public LoginResponseDto loginUserByProvider(String code,String provider) throws Exception;
+    public ResponseEntity<?> update(UpdateRequestDto updateRequestDto) throws Exception;
+    public ResponseEntity<?> logout(LogoutRequestDto logoutRequestDto) throws Exception;
 }

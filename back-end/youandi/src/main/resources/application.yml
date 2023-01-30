@@ -7,9 +7,9 @@ spring:
     port: 6379
   social:
     kakao:
-      client_id: a22cce192e20f5095696dea1befea9e5
+      client_id: 5274363d795adc972c44414aebc11d7c
       redirect_uri: http://localhost:3000/social/login/kakao
-      scope: account_email
+      scope: profile_nickname, account_email
       url:
         login: https://kauth.kakao.com/oauth/authorize
         token: https://kauth.kakao.com/oauth/token

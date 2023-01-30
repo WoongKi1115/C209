@@ -37,35 +37,35 @@ public class JwtTokenProvider {
         this.key = Keys.hmacShaKeyFor(keyBytes);
     }
 
-    // 유저 정보를 가지고 AccessToken, RefreshToken 을 생성하는 메서드
-    public TokenDto generateToken(Authentication authentication) {
-        // 권한 가져오기
-        String authorities = authentication.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.joining(","));
-
-        long now = (new Date()).getTime();
-        // Access Token 생성
-        Date accessTokenExpiresIn = new Date(now + ACCESS_TOKEN_VALID_TIME);
-        String accessToken = Jwts.builder()
-                .setSubject(authentication.getName())
-                .claim("auth", authorities)
-                .setExpiration(accessTokenExpiresIn)
-                .signWith(key, SignatureAlgorithm.HS256)
-                .compact();
-
-        // Refresh Token 생성
-        String refreshToken = Jwts.builder()
-                .setExpiration(new Date(now + REFRESH_TOKEN_VALID_TIME))
-                .signWith(key, SignatureAlgorithm.HS256)
-                .compact();
-
-        return TokenDto.builder()
-                .grantType("Bearer")
-                .accessToken(accessToken)
-                .refreshToken(refreshToken)
-                .build();
-    }
+//    // 유저 정보를 가지고 AccessToken, RefreshToken 을 생성하는 메서드
+//    public TokenDto generateToken(Authentication authentication) {
+//        // 권한 가져오기
+//        String authorities = authentication.getAuthorities().stream()
+//                .map(GrantedAuthority::getAuthority)
+//                .collect(Collectors.joining(","));
+//
+//        long now = (new Date()).getTime();
+//        // Access Token 생성
+//        Date accessTokenExpiresIn = new Date(now + ACCESS_TOKEN_VALID_TIME);
+//        String accessToken = Jwts.builder()
+//                .setSubject(authentication.getName())
+//                .claim("auth", authorities)
+//                .setExpiration(accessTokenExpiresIn)
+//                .signWith(key, SignatureAlgorithm.HS256)
+//                .compact();
+//
+//        // Refresh Token 생성
+//        String refreshToken = Jwts.builder()
+//                .setExpiration(new Date(now + REFRESH_TOKEN_VALID_TIME))
+//                .signWith(key, SignatureAlgorithm.HS256)
+//                .compact();
+//
+//        return TokenDto.builder()
+//                .grantType("Bearer")
+//                .accessToken(accessToken)
+//                .refreshToken(refreshToken)
+//                .build();
+//    }
 
     // JWT 토큰을 복호화하여 토큰에 들어있는 정보를 꺼내는 메서드
     public Authentication getAuthentication(String accessToken) {
@@ -111,7 +111,7 @@ public class JwtTokenProvider {
         }
     }
 
-    // 수빈 수정 - 토큰 생성 나누기
+    // 카카오 로그인 token 생성
     public String createToken(String email) {
         Claims claims = Jwts.claims().setSubject(email);
         Date now = new Date();
@@ -122,6 +122,24 @@ public class JwtTokenProvider {
                 .setExpiration(new Date(now.getTime() + ACCESS_TOKEN_VALID_TIME))
                 .signWith(SignatureAlgorithm.HS256, key)
                 .compact();
+    }
+    // 기존 로그인 accessToken 생성
+    public String createAccessToken(Authentication authentication) {
+        // 권한 가져오기
+        String authorities = authentication.getAuthorities().stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.joining(","));
+
+        long now = (new Date()).getTime();
+        // Access Token 생성
+        Date accessTokenExpiresIn = new Date(now + ACCESS_TOKEN_VALID_TIME);
+        String accessToken = Jwts.builder()
+                .setSubject(authentication.getName())
+                .claim("auth", authorities)
+                .setExpiration(accessTokenExpiresIn)
+                .signWith(key, SignatureAlgorithm.HS256)
+                .compact();
+        return accessToken;
     }
     public String createRefreshToken() {
         Date now = new Date();
@@ -134,6 +152,13 @@ public class JwtTokenProvider {
     }
     public String resolveToken(HttpServletRequest req) {
         return req.getHeader("X-AUTH-TOKEN");
+    }
+    public Long getExpiration(String accessToken) {
+        // accessToken 남은 유효시간
+        Date expiration = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(accessToken).getBody().getExpiration();
+        // 현재 시간
+        Long now = new Date().getTime();
+        return (expiration.getTime() - now);
     }
 
 

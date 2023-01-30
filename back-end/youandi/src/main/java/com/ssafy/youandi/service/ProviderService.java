@@ -1,8 +1,7 @@
 package com.ssafy.youandi.service;
 
-import com.ssafy.youandi.dto.AccessToken;
-import com.ssafy.youandi.dto.ProfileDto;
-import org.springframework.http.*;
+import com.ssafy.youandi.dto.kakao.AccessToken;
+import com.ssafy.youandi.dto.kakao.ProfileDto;
 
 import javax.naming.CommunicationException;
 

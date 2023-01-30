@@ -1,10 +1,12 @@
 package com.ssafy.youandi.controller;
 
 import com.ssafy.youandi.config.jwt.JwtFilter;
-import com.ssafy.youandi.dto.*;
+import com.ssafy.youandi.dto.kakao.AuthCode;
+import com.ssafy.youandi.dto.request.*;
+import com.ssafy.youandi.dto.response.LoginResponseDto;
+import com.ssafy.youandi.dto.response.TokenResponseDto;
 import com.ssafy.youandi.service.Impl.UserServiceImpl;
 import com.ssafy.youandi.service.RedisService;
-import com.ssafy.youandi.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -66,9 +68,20 @@ public class UserController {
     // 토큰 재발행
     @ApiOperation(value = "토큰 재발급", notes = "Refresh Token을 통해 토큰을 재발급받는다.")
     @PostMapping("/reissue")
-    public ResponseEntity<TokenResponseDto> reIssue(@RequestBody ReIssueDto reIssueDto) throws Exception {
-        TokenResponseDto responseDto = userService.reIssue(reIssueDto);
+    public ResponseEntity<TokenResponseDto> reIssue(@RequestBody ReIssueRequestDto reIssueRequestDto) throws Exception {
+        TokenResponseDto responseDto = userService.reIssue(reIssueRequestDto);
         log.info("responseDto : "+ responseDto);
         return new ResponseEntity<>(responseDto,HttpStatus.OK);
+    }
+    // 회원 정보 수정
+    @PutMapping("/update")
+    public ResponseEntity<?> update(@Valid @RequestBody UpdateRequestDto updateRequestDto) {
+        return userService.update(updateRequestDto);
+    }
+
+    // 로컬 로그아웃
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(@Valid @RequestBody LogoutRequestDto logoutRequestDto) {
+        return userService.logout(logoutRequestDto);
     }
 }

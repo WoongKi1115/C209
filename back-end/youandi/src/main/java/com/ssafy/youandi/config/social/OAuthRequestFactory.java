@@ -1,6 +1,6 @@
 package com.ssafy.youandi.config.social;
 
-import com.ssafy.youandi.dto.OAuthRequestDto;
+import com.ssafy.youandi.dto.request.OAuthRequestDto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

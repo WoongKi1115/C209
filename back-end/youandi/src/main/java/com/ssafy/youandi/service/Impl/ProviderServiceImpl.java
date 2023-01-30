@@ -1,12 +1,11 @@
 package com.ssafy.youandi.service.Impl;
 
 import com.google.gson.Gson;
-import com.ssafy.youandi.dto.AccessToken;
+import com.ssafy.youandi.dto.kakao.AccessToken;
 import com.ssafy.youandi.config.social.OAuthRequestFactory;
-import com.ssafy.youandi.dto.KakaoProfileDto;
-import com.ssafy.youandi.dto.OAuthRequestDto;
-import com.ssafy.youandi.dto.ProfileDto;
-import com.ssafy.youandi.service.ProviderService;
+import com.ssafy.youandi.dto.kakao.KakaoProfileDto;
+import com.ssafy.youandi.dto.request.OAuthRequestDto;
+import com.ssafy.youandi.dto.kakao.ProfileDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.*;
@@ -21,7 +20,7 @@ import javax.naming.CommunicationException;
 @Slf4j
 @Transactional
 @RequiredArgsConstructor
-public class ProviderServiceImpl implements ProviderService {
+public class ProviderServiceImpl implements com.ssafy.youandi.service.ProviderService {
 
     private final RestTemplate restTemplate;
     private final Gson gson;
@@ -34,6 +33,7 @@ public class ProviderServiceImpl implements ProviderService {
         httpHeaders.set("Authorization", "Bearer " + accessToken);
 
         String profileUrl = oAuthRequestFactory.getProfileUrl(provider);
+        log.info("profileUrl={}",profileUrl);
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(null, httpHeaders);
         ResponseEntity<String> response = restTemplate.postForEntity(profileUrl, request, String.class);
 
@@ -48,27 +48,23 @@ public class ProviderServiceImpl implements ProviderService {
     }
 
     private ProfileDto extractProfile(ResponseEntity<String> response, String provider) {
+        log.info("extractProfile");
         if (provider.equals("kakao")) {
             KakaoProfileDto kakaoProfile = gson.fromJson(response.getBody(), KakaoProfileDto.class);
-            return new ProfileDto(kakaoProfile.getKakao_account().getEmail());
+            log.info(response.getBody().toString());
+            log.info("no NickName kakaoProfile={}",kakaoProfile.toString());
+            return new ProfileDto(kakaoProfile.getKakao_account().getNickName(), kakaoProfile.getKakao_account().getEmail());
         } else{
             return null;
         }
     }
 
     public AccessToken getAccessToken(String code, String provider) throws CommunicationException {
-        log.info("getAccessToken");
-        log.info("code={},provider={}",code,provider);
         HttpHeaders httpHeaders = new HttpHeaders();
-        log.info("1");
         httpHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
-        log.info("2");
         OAuthRequestDto oAuthRequest = oAuthRequestFactory.getRequest(code, provider);
-        log.info("3");
         HttpEntity<LinkedMultiValueMap<String, String>> request = new HttpEntity<>(oAuthRequest.getMap(), httpHeaders);
-        log.info("4");
-        log.info("oAuthRequest.getUrl() ={}",oAuthRequest.getUrl());
         ResponseEntity<String> response = restTemplate.postForEntity(oAuthRequest.getUrl(), request, String.class);
         try {
             if (response.getStatusCode() == HttpStatus.OK) {
