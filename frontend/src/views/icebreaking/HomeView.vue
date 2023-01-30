@@ -15,16 +15,20 @@
 import router from "@/router";
 
 export default {
-  methods: {
-    goIceMain() {
-      router.push({ name: "IceMain" });
-    },
-    goGameMain() {
-      router.push({ name: "GameMain" });
-    },
-    goLogin() {
+  setup() {
+    
+    const goLogin = () => {
       router.push({ name: "Login" });
-    },
+    }
+    return {
+      goLogin,
+    }
+  },
+  methods: {
+
+    // goLogin() {
+    //   router.push({ name: "Login" });
+    // },
   },
 };
 </script>

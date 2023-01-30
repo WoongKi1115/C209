@@ -6,33 +6,45 @@
       <span v-bind:numOfMember="numOfMember">{{ numOfMember }}</span>
       <button @click="plusNum">+</button>
     </div>
+    <button @click="goIceQr">방만들기</button>
   </div>
 </template>
 
 <script>
+
 import router from "@/router";
+import { ref } from "vue"
+import { useStore } from "vuex";
+
 export default {
-	data() {
+	setup() {
+		const store = useStore()
+		const numOfMember = ref(5)
+
+		const minusNum = () => {
+			if (numOfMember.value > 4) {
+				numOfMember.value -=1
+			}
+		}
+		const plusNum = () => {
+			if (numOfMember.value < 6) {
+				numOfMember.value +=1
+			}
+		}
+		const goIceQr = () => {
+			store.state.numOfMember = numOfMember.value
+			router.push({ name: "IceQr"});
+			// console.log(store.state.numOfMember)
+		}
 		return {
-			numOfMember: 5 //멤버수
+			numOfMember,
+			minusNum,
+			plusNum,
+			goIceQr
 		}
 	},
-	methods: {
-		minusNum() {
-			if(this.numOfMember > 4) {
-				this.numOfMember -= 1
-			}
-		},
-		plusNum() {
-			if(this.numOfMember < 6) {
-				this.numOfMember += 1
-			}
-		},
-		goIceQr() {
-			this.$store.state.numOfMember =this.numOfMember
-      router.push({ name: "IceQr" });
-		}
-	}
+  methods: {
+  },
 };
 </script>
 

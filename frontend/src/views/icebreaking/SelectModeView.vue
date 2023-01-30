@@ -11,10 +11,16 @@
 import router from "@/router";
 
 export default {
-  methods: {
-    goMakeRoomIce() {
+  setup() {
+    const goMakeRoomIce = () => {
       router.push({ name: "MakeRoomIce" });
-    },
+    }
+    return {
+      goMakeRoomIce,
+    }
+  },
+  methods: {
+   
   }
 };
 </script>

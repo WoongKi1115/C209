@@ -91,7 +91,7 @@ export default {
         console.log(err)
       })
     };
-
+    
     const checkEmail = () => {
       let isValid = EmailValidator.validate(state.value.credentials.email);
       state.value.valid.email = !isValid;
@@ -105,7 +105,7 @@ export default {
   },
   watch: {
     "state.credentials.email": {
-      handler(newValue, oldValue) {
+      handler() {
         this.checkEmail();
       },
       deep: true,
